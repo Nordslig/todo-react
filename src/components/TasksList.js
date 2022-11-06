@@ -8,25 +8,24 @@ const tasks = [
 ];
 
 const TasksList = () => {
-  const [actualTasks, setActualTasks] = useState([tasks]);
+  const [actualTasks, setActualTasks] = useState(tasks);
 
-  const doneTaskHandler = (event, taskId) => {
-    const removedTask = tasks.findIndex((task) => task.id === taskId);
-    tasks.splice(removedTask, 1);
-    console.log(tasks);
-    setActualTasks(tasks);
+  const doneTaskHandler = (taskId) => {
+    const tempTasks = [...actualTasks];
+    const doneTask = tempTasks.findIndex((task) => task.id === taskId);
+    tempTasks.splice(doneTask, 1);
+
+    setActualTasks(tempTasks);
   };
 
-  const list = tasks.map((task) => {
-    return (
-      <li key={task.id}>
-        {task.text}
-        <button onClick={(event) => doneTaskHandler(event, task.id)}>
-          Done
-        </button>
-      </li>
-    );
-  });
+  const list = actualTasks.map((task) => (
+    <li key={task.id}>
+      {task.text}
+      <button type="button" onClick={() => doneTaskHandler(task.id)}>
+        Done
+      </button>
+    </li>
+  ));
 
   return (
     <List>
