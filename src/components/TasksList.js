@@ -11,12 +11,6 @@ const TasksList = () => {
   const [actualTasks, setActualTasks] = useState([tasks]);
 
   const doneTaskHandler = (event, taskId) => {
-    // console.log(tasks);
-    // const removedTask = tasks.findIndex((task) => task.id === taskId);
-    // console.log(removedTask);
-    // const changedTasks = tasks.slice(removedTask, 1);
-    // console.log(changedTasks);
-    // return tasks;
     const removedTask = tasks.findIndex((task) => task.id === taskId);
     tasks.splice(removedTask, 1);
     console.log(tasks);
