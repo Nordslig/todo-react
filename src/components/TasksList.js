@@ -13,8 +13,6 @@ const tasks = [
 const TasksList = () => {
   const [actualTasks, setActualTasks] = useState(tasks);
 
-  // comment test
-
   const doneTaskHandler = (taskId) => {
     const newList = [...actualTasks];
     const removedTask = newList.findIndex((task) => task.id === taskId);
