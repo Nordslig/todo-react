@@ -3,15 +3,18 @@ import List from "../UI/List";
 
 import classes from "./TasksList.module.css";
 
+
 const tasks = [
   { id: Math.random(), text: "Zrobić pranie" },
   { id: Math.random(), text: "Pokodować" },
   { id: Math.random(), text: "Zrobić coś pożytecznego, test test test" },
   { id: Math.random(), text: "Poczytać książkę" },
+
 ];
 
 const TasksList = () => {
   const [actualTasks, setActualTasks] = useState(tasks);
+
   // comment test
   const doneTaskHandler = (taskId) => {
     const newList = [...actualTasks];
@@ -37,6 +40,7 @@ const TasksList = () => {
           );
         })}
       </ul>
+
     </List>
   );
 };
