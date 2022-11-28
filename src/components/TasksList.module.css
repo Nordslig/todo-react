@@ -1,0 +1,26 @@
+.list {
+  width: 20%;
+  margin: 1%;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.4rem;
+  border-bottom: black 1px dashed;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.button {
+  border: 1px black solid;
+  background-color: #fff;
+  width: auto;
+  padding: 0.2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
