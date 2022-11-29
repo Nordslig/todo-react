@@ -1,0 +1,10 @@
+.title {
+  display: block;
+  text-align: center;
+}
+
+.sections {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

@@ -10,18 +10,22 @@ const tasks = [
   { id: Math.random(), text: "Poczytać książkę" },
 ];
 
-const TasksList = () => {
+const TasksList = (props) => {
   const [actualTasks, setActualTasks] = useState(tasks);
 
   const doneTaskHandler = (taskId) => {
     const newList = [...actualTasks];
-    const removedTask = newList.findIndex((task) => task.id === taskId);
-    newList.splice(removedTask, 1);
+    const removedTaskIndex = newList.findIndex((task) => task.id === taskId);
+    const removedTask = newList.find((task) => task.id === taskId);
+    newList.splice(removedTaskIndex, 1);
     setActualTasks(newList);
+
+    props.onDoneTask(removedTask);
   };
 
   return (
     <List>
+      <h2 className="title">Tasks:</h2>
       <ul className={classes.list}>
         {actualTasks.map((task) => {
           return (

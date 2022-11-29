@@ -1,0 +1,21 @@
+.title {
+  text-align: center;
+}
+
+.list {
+  width: 80%;
+  margin: 1% auto;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.4rem;
+  border-bottom: black 1px dashed;
+}
+
+.title {
+  font-size: 1.5rem;
+}
