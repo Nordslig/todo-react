@@ -1,6 +1,9 @@
 .title {
   display: block;
   text-align: center;
+  background-color: rgb(65, 42, 156);
+  border-radius: 15px;
+  color: #fff;
 }
 
 .sections {
