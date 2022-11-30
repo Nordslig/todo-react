@@ -42,3 +42,8 @@
   font-weight: bold;
   letter-spacing: 1px;
 }
+
+.btn:active {
+  background-color: rgb(169, 161, 223);
+  color: #000;
+}
