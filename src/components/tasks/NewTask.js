@@ -1,10 +1,14 @@
 import { useState } from "react";
+
 import classes from "./NewTask.module.css";
 
 const NewTask = (props) => {
   const [taskText, setTaskText] = useState({});
+  const [taskValue, setTaskValue] = useState("");
 
   const newTaskHandler = (event) => {
+    setTaskValue(event.target.value);
+
     const task = {
       id: Math.floor(Math.random() * 1000),
       text: event.target.value,
@@ -20,6 +24,9 @@ const NewTask = (props) => {
       return;
     }
 
+    setTaskValue("");
+    setTaskText({});
+
     props.addNewTask(taskText);
   };
 
@@ -30,7 +37,12 @@ const NewTask = (props) => {
         <label htmlFor="text" className={classes.label}>
           Title:
         </label>
-        <input id="text" className={classes.input} onChange={newTaskHandler} />
+        <input
+          id="text"
+          className={classes.input}
+          onChange={newTaskHandler}
+          value={taskValue}
+        />
         <button className={classes.btn}>Add task</button>
       </form>
     </header>

@@ -22,7 +22,8 @@ function App() {
     setTasks((prevState) => [...prevState, task]);
   };
 
-  const newDoneTaskHandler = (task) => {
+  const newDoneTaskHandler = (list, task) => {
+    setTasks(list);
     setDoneTasks((prevState) => [...prevState, task]);
   };
 

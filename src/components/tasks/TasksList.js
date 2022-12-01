@@ -4,13 +4,13 @@ import List from "../UI/List";
 import classes from "./TasksList.module.css";
 
 const TasksList = (props) => {
-  const [actualTasks, setActualTasks] = useState(props.list);
+  const [actualTasks, setActualTasks] = useState([]);
+
+  const { list, onDoneTask } = props;
 
   useEffect(() => {
-    setActualTasks(props.list);
-  }, [props.list]);
-
-  // setActualTasks();
+    setActualTasks(list);
+  }, [list]);
 
   const doneTaskHandler = (taskId) => {
     const newList = [...actualTasks];
@@ -19,7 +19,7 @@ const TasksList = (props) => {
     newList.splice(removedTaskIndex, 1);
     setActualTasks(newList);
 
-    props.onDoneTask(removedTask);
+    onDoneTask(newList, removedTask);
   };
 
   return (
