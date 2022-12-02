@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import "./App.css";
 import DoneTasks from "./components/tasks/DoneTasks";
+import FailedTasks from "./components/tasks/FailedTasks";
 import NewTask from "./components/tasks/NewTask";
 import TasksList from "./components/tasks/TasksList";
 
@@ -17,6 +18,7 @@ const tasksList = [
 function App() {
   const [tasks, setTasks] = useState(tasksList);
   const [doneTasks, setDoneTasks] = useState([]);
+  const [failedTasks, setFailedTasks] = useState([]);
 
   const addTaskHandler = (task) => {
     setTasks((prevState) => [...prevState, task]);
@@ -27,12 +29,22 @@ function App() {
     setDoneTasks((prevState) => [...prevState, task]);
   };
 
+  const newFailedTaskHandler = (list, task) => {
+    setTasks(list);
+    setFailedTasks((prevState) => [...prevState, task]);
+  };
+
   return (
     <Fragment>
       <NewTask addNewTask={addTaskHandler} />
       <div className="sections">
-        <TasksList list={tasks} onDoneTask={newDoneTaskHandler} />
+        <TasksList
+          list={tasks}
+          onDoneTask={newDoneTaskHandler}
+          onRemoveTask={newFailedTaskHandler}
+        />
         <DoneTasks list={doneTasks} />
+        <FailedTasks list={failedTasks} />
       </div>
     </Fragment>
   );

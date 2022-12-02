@@ -6,7 +6,7 @@ import classes from "./TasksList.module.css";
 const TasksList = (props) => {
   const [actualTasks, setActualTasks] = useState([]);
 
-  const { list, onDoneTask } = props;
+  const { list, onDoneTask, onRemoveTask } = props;
 
   useEffect(() => {
     setActualTasks(list);
@@ -20,6 +20,16 @@ const TasksList = (props) => {
     setActualTasks(newList);
 
     onDoneTask(newList, removedTask);
+  };
+
+  const failedTaskHandler = (taskId) => {
+    const newList = [...actualTasks];
+    const removedTaskIndex = newList.findIndex((task) => task.id === taskId);
+    const removedTask = newList.find((task) => task.id === taskId);
+    newList.splice(removedTaskIndex, 1);
+    setActualTasks(newList);
+
+    onRemoveTask(newList, removedTask);
   };
 
   return (
@@ -36,6 +46,12 @@ const TasksList = (props) => {
                 className={classes.button}
               >
                 Done
+              </button>
+              <button
+                onClick={() => failedTaskHandler(task.id)}
+                className={classes.button}
+              >
+                Failed
               </button>
             </li>
           );
