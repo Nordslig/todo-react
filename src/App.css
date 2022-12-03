@@ -1,15 +1,10 @@
-.body {
-  /* background-color: #212121; */
-}
-
-.title {
-  display: block;
-  width: 70%;
+.list-name {
+  width: 50%;
   margin: 0 auto;
-  padding: 0.1rem 0;
+  padding: 0.2rem 0;
+  border-radius: 20px;
   text-align: center;
-  background-color: rgb(65, 42, 156);
-  border-radius: 15px;
+  background-color: #412a9c;
   color: #fff;
 }
 
@@ -17,4 +12,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.empty-list {
+  margin-top: 4%;
+  font-size: 1.4rem;
+  text-transform: uppercase;
 }

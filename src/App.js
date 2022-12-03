@@ -35,7 +35,7 @@ function App() {
   };
 
   return (
-    <div className="body">
+    <Fragment>
       <NewTask addNewTask={addTaskHandler} />
       <div className="sections">
         <TasksList
@@ -46,7 +46,7 @@ function App() {
         <DoneTasks list={doneTasks} />
         <FailedTasks list={failedTasks} />
       </div>
-    </div>
+    </Fragment>
   );
 }
 

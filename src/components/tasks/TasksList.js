@@ -34,8 +34,10 @@ const TasksList = (props) => {
 
   return (
     <List>
-      <h2 className="title">Tasks:</h2>
-      {actualTasks.length === 0 && <p>No tasks to do!</p>}
+      <h2 className="list-name">Tasks:</h2>
+      {actualTasks.length === 0 && (
+        <p className="empty-list">No tasks to do!</p>
+      )}
       <ul className={classes.list}>
         {actualTasks.map((task) => {
           return (
