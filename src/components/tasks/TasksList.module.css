@@ -1,26 +1,18 @@
-.list {
-  width: 80%;
-  margin: 1% auto;
-  list-style: none;
-}
-
-.task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0.4rem;
-  border-bottom: black 1px dashed;
-}
-
-.title {
-  font-size: 1.5rem;
-}
-
 .button {
   border: 1px black solid;
-  background-color: #fff;
-  width: auto;
+  width: 22%;
   padding: 0.2rem;
   font-size: 1rem;
   text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.button.done {
+  background-color: rgb(66, 255, 101);
+}
+
+.button.failed {
+  background-color: #bb0808;
+  color: #fff;
 }

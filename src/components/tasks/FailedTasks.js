@@ -1,7 +1,5 @@
 import List from "../UI/List";
 
-import classes from "./FailedTasks.module.css";
-
 const FailedTasks = (props) => {
   return (
     <List>
@@ -9,15 +7,17 @@ const FailedTasks = (props) => {
       {props.list.length === 0 && (
         <p className="empty-list">No failed tasks!</p>
       )}
-      <ul className={classes.list}>
-        {props.list.map((task) => {
-          return (
-            <li key={task.id} className={classes.task}>
-              <p className={classes.text}>{task.text}</p>
-            </li>
-          );
-        })}
-      </ul>
+      {props.list.length > 0 && (
+        <ul className="list">
+          {props.list.map((task) => {
+            return (
+              <li key={task.id} className="task">
+                <p className="title">{task.text}</p>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </List>
   );
 };

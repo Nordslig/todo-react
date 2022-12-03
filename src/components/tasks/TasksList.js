@@ -38,27 +38,29 @@ const TasksList = (props) => {
       {actualTasks.length === 0 && (
         <p className="empty-list">No tasks to do!</p>
       )}
-      <ul className={classes.list}>
-        {actualTasks.map((task) => {
-          return (
-            <li key={task.id} className={classes.task}>
-              <p className={classes.title}>{task.text}</p>
-              <button
-                onClick={() => doneTaskHandler(task.id)}
-                className={classes.button}
-              >
-                Done
-              </button>
-              <button
-                onClick={() => failedTaskHandler(task.id)}
-                className={classes.button}
-              >
-                Failed
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+      {actualTasks.length > 0 && (
+        <ul className="list">
+          {actualTasks.map((task) => {
+            return (
+              <li key={task.id} className="task">
+                <p className="title">{task.text}</p>
+                <button
+                  onClick={() => doneTaskHandler(task.id)}
+                  className={`${classes.button} ${classes.done}`}
+                >
+                  Done
+                </button>
+                <button
+                  onClick={() => failedTaskHandler(task.id)}
+                  className={`${classes.button} ${classes.failed}`}
+                >
+                  Failed
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </List>
   );
 };

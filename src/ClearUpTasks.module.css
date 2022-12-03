@@ -1,0 +1,13 @@
+.button {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 5%;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: rgb(100, 7, 7) solid 2px;
+  border-radius: 20px;
+  background-color: rgba(247, 124, 124, 0.729);
+  color: rgb(100, 7, 7);
+}

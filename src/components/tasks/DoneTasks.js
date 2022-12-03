@@ -1,5 +1,4 @@
 import List from "../UI/List";
-import classes from "./DoneTasks.module.css";
 
 const DoneTasks = (props) => {
   return (
@@ -8,15 +7,17 @@ const DoneTasks = (props) => {
       {props.list.length === 0 && (
         <p className="empty-list">No completed tasks!</p>
       )}
-      <ul className={classes.list}>
-        {props.list.map((task) => {
-          return (
-            <li key={task.id} className={classes.task}>
-              <p className={classes.text}>{task.text}</p>
-            </li>
-          );
-        })}
-      </ul>
+      {props.list.length > 0 && (
+        <ul className="list">
+          {props.list.map((task) => {
+            return (
+              <li key={task.id} className="task">
+                <p className="title">{task.text}</p>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </List>
   );
 };

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ClearUpTasks from "../../ClearUpTasks";
 
 import classes from "./NewTask.module.css";
 
@@ -32,6 +33,7 @@ const NewTask = (props) => {
 
   return (
     <header className={classes.header}>
+      <ClearUpTasks clearAllLists={props.allListsState} />
       <h1 className={classes.title}>To do list</h1>
       <form className={classes.form} onSubmit={onSubmitHandler}>
         <label htmlFor="text" className={classes.label}>
