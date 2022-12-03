@@ -34,9 +34,11 @@ function App() {
     setFailedTasks((prevState) => [...prevState, task]);
   };
 
+  const clearAllLists = { setTasks, setDoneTasks, setFailedTasks };
+
   return (
     <Fragment>
-      <NewTask addNewTask={addTaskHandler} />
+      <NewTask addNewTask={addTaskHandler} allListsState={clearAllLists} />
       <div className="sections">
         <TasksList
           list={tasks}
